@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -16,29 +15,33 @@ import {
   MapPin,
   ArrowLeft
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background font-vazir">
-      {/* Navigation */}
-      <nav className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
-        <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <Trophy className="h-8 w-8 text-primary" />
-            <span className="text-xl font-bold">ورزش‌منیجر</span>
+    <div className="min-h-screen bg-background text-foreground font-vazir">
+      {/* Header */}
+      <header className="container mx-auto px-4 py-6">
+        <nav className="flex justify-between items-center">
+          <div className="flex items-center gap-4">
+            <Link 
+              to="/register" 
+              className="bg-sports-orange text-white px-6 py-2 rounded-lg hover:bg-sports-orange/90 transition-colors font-medium"
+            >
+              ثبت نام
+            </Link>
+            <Link 
+              to="/login" 
+              className="border border-sports-blue text-sports-blue px-6 py-2 rounded-lg hover:bg-sports-blue hover:text-white transition-colors font-medium"
+            >
+              ورود
+            </Link>
           </div>
-          <div className="hidden md:flex items-center gap-6">
-            <a href="#features" className="text-muted-foreground hover:text-foreground transition-colors">ویژگی‌ها</a>
-            <a href="#pricing" className="text-muted-foreground hover:text-foreground transition-colors">قیمت‌ها</a>
-            <a href="#testimonials" className="text-muted-foreground hover:text-foreground transition-colors">نظرات</a>
-            <a href="#contact" className="text-muted-foreground hover:text-foreground transition-colors">تماس</a>
+          <div className="text-2xl font-bold sports-gradient bg-clip-text text-transparent">
+            سیستم مدیریت ورزشی
           </div>
-          <div className="flex items-center gap-2">
-            <Button variant="ghost">ورود</Button>
-            <Button>شروع رایگان</Button>
-          </div>
-        </div>
-      </nav>
+        </nav>
+      </header>
 
       {/* Hero Section */}
       <section className="py-20 lg:py-32 relative overflow-hidden">
